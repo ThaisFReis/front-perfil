@@ -4,92 +4,72 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
+      <section className={styles.header}>
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src="/user2.jpg"
+          alt="jennie"
+          width={60}
+          height={60}
         />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <section className={styles.header_info}>
+          <h1>Olá</h1>
+          <h1>Jennie Kim</h1>
+          <p>jennie@gmail.com</p>
+        </section>
+        <button>
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 15 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="15" height="15" fill="white" />
+            <path d="M1.5 1.5L13.5 13.5M1.5 13.5L13.5 1.5" stroke="#7775A7" />
+          </svg>
+        </button>
+      </section>
+      <hr className={styles.solid} />
+      {/* Mudar para lista de links */}
+      <section className={styles.actions}>
+        <button>
+          <Image src="/id.svg" alt="dados" width={20} height={20} />
+          Meus dados
+        </button>
+        <button>
+          <Image src="/user.svg" alt="perfil" width={20} height={20} />
+          Meu perfil
+        </button>
+        <button>
+          <Image src="/heart.svg" alt="favorite" width={20} height={20} />
+          Favoritos
+        </button>
+        <button>
+          <Image
+            src="/text-document.svg"
+            alt="signature"
+            width={20}
+            height={20}
+          />
+          Assinatura
+        </button>
+        <button>
+          <Image src="/cog.svg" alt="settings" width={15} height={15} />
+          Configurações
+        </button>
+      </section>
+      <hr className={styles.solid} />
+      <section className={styles.signout}>
+        <button>
+          <Image src="/signin.svg" alt="signout" width={20} height={20} />
+          Sair
+        </button>
+      </section>
+      <footer className={styles.footer}>
+        <h2>Informações legais</h2>
+        <p>Termos de uso</p>
+        <p>Política de privacidade</p>
+      </footer>
     </main>
   );
 }
