@@ -1,0 +1,54 @@
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000000;
+  flex-shrink: 0;
+  gap: 0.8rem;
+  padding: 1rem 0 0 0;
+}
+
+.footerIcons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin: 3px;
+}
+
+.footer p {
+  width: 265px;
+  color: #ffffff;
+  font-size: 12px;
+
+  font-weight: medium;
+  text-align: center;
+  text-wrap: pretty;
+  line-height: 1.5;
+}
+
+.footer a {
+  color: #ffffff;
+  font-size: 12px;
+
+  text-decoration: underline;
+  font-weight: medium;
+}
+
+.vercelLogo {
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+
+.footerText,
+.footerIcons {
+  margin-bottom: 16px;
+}
+
+.footerCopy {
+  margin-top: 41px;
+  margin-bottom: 26px;
+}

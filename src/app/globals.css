@@ -39,7 +39,6 @@ sub,
 sup,
 tt,
 var,
-b,
 u,
 i,
 center,
@@ -130,4 +129,14 @@ button {
   border: none;
   cursor: pointer;
   background: none;
+}
+input {
+  border: none;
+  outline: none;
+  background-color: none;
+  background: none;
+}
+a{
+  text-decoration: none;
+  color: inherit;
 }

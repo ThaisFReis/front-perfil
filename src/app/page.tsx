@@ -1,75 +1,54 @@
-import Image from "next/image";
+"use client";
+import { useState, useEffect, useRef } from "react";
+import Menu from "./components/Partials/Menu";
+import Header from "./components/Partials/Header";
+import Profile from "./components/Profile/page";
+import Footer from "./components/Partials/Footer";
 import styles from "./page.module.css";
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Fechar o menu ao clicar fora dele
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        menuRef.current &&
+        (menuRef.current as HTMLElement).contains(event.target as Node)
+      ) {
+        setIsMenuOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [menuRef]);
+
+  function toggleMenu() {
+    setIsMenuOpen(!isMenuOpen);
+  }
+
+  const containerClassName = isMenuOpen
+    ? `${styles.container} ${styles.menuOpen}`
+    : styles.container;
+
   return (
-    <main className={styles.main}>
-      <section className={styles.header}>
-        <Image
-          src="/user2.jpg"
-          alt="jennie"
-          width={60}
-          height={60}
-        />
-        <section className={styles.header_info}>
-          <h1>Olá</h1>
-          <h1>Jennie Kim</h1>
-          <p>jennie@gmail.com</p>
-        </section>
-        <button>
-          <svg
-            width="15"
-            height="15"
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width="15" height="15" fill="white" />
-            <path d="M1.5 1.5L13.5 13.5M1.5 13.5L13.5 1.5" stroke="#7775A7" />
-          </svg>
-        </button>
-      </section>
-      <hr className={styles.solid} />
-      {/* Mudar para lista de links */}
-      <section className={styles.actions}>
-        <button>
-          <Image src="/id.svg" alt="dados" width={20} height={20} />
-          Meus dados
-        </button>
-        <button>
-          <Image src="/user.svg" alt="perfil" width={20} height={20} />
-          Meu perfil
-        </button>
-        <button>
-          <Image src="/heart.svg" alt="favorite" width={20} height={20} />
-          Favoritos
-        </button>
-        <button>
-          <Image
-            src="/text-document.svg"
-            alt="signature"
-            width={20}
-            height={20}
-          />
-          Assinatura
-        </button>
-        <button>
-          <Image src="/cog.svg" alt="settings" width={15} height={15} />
-          Configurações
-        </button>
-      </section>
-      <hr className={styles.solid} />
-      <section className={styles.signout}>
-        <button>
-          <Image src="/signin.svg" alt="signout" width={20} height={20} />
-          Sair
-        </button>
-      </section>
-      <footer className={styles.footer}>
-        <h2>Informações legais</h2>
-        <p>Termos de uso</p>
-        <p>Política de privacidade</p>
-      </footer>
-    </main>
+    <div
+      className={styles.container}
+      style={{
+        backgroundColor: isMenuOpen ? "#00000070" : "transparent",
+      }}
+    >
+      <Menu isMenuOpen={isMenuOpen} />
+      <div className={containerClassName} ref={menuRef}>
+        <div className={styles.main}>
+          <Header toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
+          <Profile isMenuOpen={isMenuOpen} />
+        </div>
+      </div>
+      <Footer isMenuOpen={isMenuOpen} />
+    </div>
   );
 }
