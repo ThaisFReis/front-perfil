@@ -7,7 +7,7 @@
 }
 
 .main {
-  width: 768px;
+  width: 50vw;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -27,27 +27,24 @@
 }
 
 .perfil {
-  width: 768px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 28px;
-}
-
-.perfil_header {
+  width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  align-self: flex-start;
-  gap: 8px;
+  margin-top: 28px;
+  gap: 4px;
+}
 
+.perfil_info {
+  display: flex;
   font-size: 20px;
   line-height: 120%;
   color: #080930;
 }
 
 .perfil_img {
-  width: 768px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -83,7 +80,6 @@
   line-height: 120%;
   font-weight: medium;
 }
-/*Image,p*/
 
 hr.solid {
   border: 1px solid #d9d9d9;
@@ -92,14 +88,23 @@ hr.solid {
 }
 
 .perfil_info_events {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
 .perfil_info_events_list {
+  width: 100%;
   display: flex;
   flex-direction: row;
   gap: 8px;
+  margin-bottom: 32px;
 }
-/*Image*/
+
+@media screen and (max-width: 996px) {
+  .main {
+    width: 90vw;
+  }
+  
+}
