@@ -5,6 +5,7 @@ import Header from "./components/Partials/Header";
 import Profile from "./components/Profile/page";
 import Footer from "./components/Partials/Footer";
 import styles from "./page.module.css";
+import { useUser } from "./userContext";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

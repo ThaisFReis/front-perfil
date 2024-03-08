@@ -12,7 +12,7 @@ const Menu = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
           <h1>Jennie Kim</h1>
           <p>jennie@gmail.com</p>
         </section>
-        <button>
+        {/*<button>
           <svg
             width="15"
             height="15"
@@ -24,6 +24,7 @@ const Menu = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
             <path d="M1.5 1.5L13.5 13.5M1.5 13.5L13.5 1.5" stroke="#7775A7" />
           </svg>
         </button>
+  */}
       </section>
       <hr className={styles.solid} />
       <section className={styles.actions}>
