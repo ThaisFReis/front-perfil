@@ -46,7 +46,7 @@ export default function Home() {
       <div className={containerClassName} ref={menuRef}>
         <div className={styles.main}>
           <Header toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
-          <Profile isMenuOpen={isMenuOpen} />
+          <Profile/>
         </div>
       </div>
       <Footer isMenuOpen={isMenuOpen} />

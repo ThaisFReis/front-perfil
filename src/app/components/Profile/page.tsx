@@ -18,7 +18,7 @@ import {
 import { useUser } from "../../userContext";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
-export default function Profile({ isMenuOpen }: { isMenuOpen: boolean }) {
+export default function Profile() {
   const [user, setUser] = useState<any>(null);
   const { userId, setUserId } = useUser();
   const [images, setImages] = useState(["", "", ""]);
@@ -183,9 +183,6 @@ export default function Profile({ isMenuOpen }: { isMenuOpen: boolean }) {
     <>
       <section
         className={styles.perfil}
-        style={{
-          opacity: isMenuOpen ? "0.8" : "1",
-        }}
       >
         <section className={styles.perfil_header}>
           <Image src="/arrow-left.svg" alt="voltar" width={15} height={15} />
@@ -205,7 +202,6 @@ export default function Profile({ isMenuOpen }: { isMenuOpen: boolean }) {
                     backgroundImage: `url(${user.photos[index]})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
-                    filter: isMenuOpen ? "brightness(0.5)" : "brightness(1)",
                   }}
                 >
                   <Image
@@ -218,7 +214,6 @@ export default function Profile({ isMenuOpen }: { isMenuOpen: boolean }) {
                       position: "absolute",
                       bottom: 0,
                       right: 17,
-                      filter: isMenuOpen ? "brightness(0.9)" : "brightness(1)",
                     }}
                   />
                 </div>
@@ -238,7 +233,6 @@ export default function Profile({ isMenuOpen }: { isMenuOpen: boolean }) {
                     height={100}
                     style={{
                       cursor: "pointer",
-                      filter: isMenuOpen ? "brightness(0.5)" : "brightness(1)",
                     }}
                   />
                 </label>
@@ -261,10 +255,7 @@ export default function Profile({ isMenuOpen }: { isMenuOpen: boolean }) {
                     ""
                   )}
                 </h1>
-                <button
-                style={{
-                  filter: isMenuOpen ? "brightness(0.5)" : "brightness(1)",
-                }}>
+                <button>
                   <Link href="components/Profile/ProfileEdit">
                     Editar perfil
                   </Link>
@@ -302,11 +293,6 @@ export default function Profile({ isMenuOpen }: { isMenuOpen: boolean }) {
             {user && (user.gender || user.city) ? (
               <hr
                 className={styles.solid}
-                style={{
-                  border: isMenuOpen
-                    ? "1px solid #868686"
-                    : "1px solid #d9d9d9",
-                }}
               />
             ) : (
               ""
@@ -326,11 +312,6 @@ export default function Profile({ isMenuOpen }: { isMenuOpen: boolean }) {
             {user && user.confirmations && user.confirmations.length > 0 ? (
               <hr
                 className={styles.solid}
-                style={{
-                  border: isMenuOpen
-                    ? "1px solid #868686"
-                    : "1px solid #d9d9d9",
-                }}
               />
             ) : (
               ""
@@ -376,9 +357,6 @@ export default function Profile({ isMenuOpen }: { isMenuOpen: boolean }) {
                           backgroundImage: `url(${confirmation.photo})`,
                           backgroundSize: "cover",
                           backgroundPosition: "center",
-                          filter: isMenuOpen
-                            ? "brightness(0.5)"
-                            : "brightness(1)",
                         }}
                       >
                         <Image
@@ -393,9 +371,6 @@ export default function Profile({ isMenuOpen }: { isMenuOpen: boolean }) {
                             position: "absolute",
                             bottom: 0,
                             right: 17,
-                            filter: isMenuOpen
-                              ? "brightness(0.8)"
-                              : "brightness(1)",
                           }}
                         />
                       </div>
