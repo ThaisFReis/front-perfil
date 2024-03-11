@@ -137,7 +137,6 @@ export default function ProfileView() {
               <section className={styles.perfil_info_personal}>
                 <div
                   className={styles.perfil_info_personal_item}
-                  style={{ marginBottom: 37, marginTop: 18 }}
                 >
                   <Image
                     src={"/message.svg"}

@@ -109,7 +109,8 @@ hr.solid {
   gap: 8px;
 }
 
-.perfil_info_events_list img {
+.perfil_info_events_item{
   border-radius: 8px;
-  object-fit: cover;
+  width: 70px;
+  height: 70px;
 }

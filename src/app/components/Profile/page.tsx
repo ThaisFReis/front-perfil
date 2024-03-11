@@ -351,9 +351,6 @@ export default function Profile() {
                         className={styles.perfil_info_events_item}
                         style={{
                           position: "relative",
-                          width: 100,
-                          height: 100,
-                          borderRadius: 50,
                           backgroundImage: `url(${confirmation.photo})`,
                           backgroundSize: "cover",
                           backgroundPosition: "center",
@@ -369,8 +366,8 @@ export default function Profile() {
                           }
                           style={{
                             position: "absolute",
-                            bottom: 0,
-                            right: 17,
+                            bottom: -5,
+                            right: 0,
                           }}
                         />
                       </div>
