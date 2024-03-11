@@ -40,7 +40,7 @@ export default function ProfileView() {
 
   const fetchUser = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/users");
+      const response = await axios.get("https://perfil-back.onrender.com/users");
       const userData = response.data;
       setUser(userData);
     } catch (error) {

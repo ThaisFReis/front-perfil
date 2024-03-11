@@ -75,7 +75,7 @@ export default function ProfileEdit() {
 
     try {
       const response = await axios.put(
-        `http://localhost:3000/users/${userId}`,
+        `https://perfil-back.onrender.com/users/${userId}`,
         {
           name,
           birthDate,

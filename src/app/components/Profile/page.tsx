@@ -26,7 +26,7 @@ export default function Profile() {
 
   const fetchUser = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/users");
+      const response = await axios.get("https://perfil-back.onrender.com/users");
       const userData = response.data;
 
       console.log(userData);
@@ -78,7 +78,7 @@ export default function Profile() {
       formData.append("file", file);
 
       const response = await axios.post(
-        `http://localhost:3000/users/${user.id}/photos`,
+        `https://perfil-back.onrender.com/users/${user.id}/photos`,
         formData
       );
       const newImages = [...images];
@@ -117,7 +117,7 @@ export default function Profile() {
     if (confirmRemoval) {
       try {
         await axios.delete(
-          `http://localhost:3000/users/${user.id}/photos/${index}`
+          `https://perfil-back.onrender.com/users/${user.id}/photos/${index}`
         );
 
         // Atualiza o estado das imagens
@@ -153,7 +153,7 @@ export default function Profile() {
     if (confirmRemoval) {
       try {
         const response = await axios.delete(
-          `http://localhost:3000/users/${user.id}/confirmations/${index}`
+          `https://perfil-back.onrender.com/users/${user.id}/confirmations/${index}`
         );
 
         // Atualiza o estado das confirmações
