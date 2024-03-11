@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "Beplauze",
 };
 
-export default function RootLayout({
+export default function RootLayout({ 
   children,
 }: Readonly<{
   children: React.ReactNode;

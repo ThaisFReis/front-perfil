@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
 export const images = {
-  domains: ['assets.beplauze.com', 'media.istockphoto.com', 'test-backend-bzwn.onrender.com'],
+  domains: ['assets.beplauze.com', 'media.istockphoto.com', 'test-backend-bzwn.onrender.com', 'https://perfil-back.onrender.com/  '],
 
 };
